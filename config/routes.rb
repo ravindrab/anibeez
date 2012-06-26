@@ -1,4 +1,6 @@
 Anibeez::Application.routes.draw do
+  resources :bookmarks
+
   devise_for :users
 
   get "home/index"
