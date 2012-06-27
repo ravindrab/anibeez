@@ -3,8 +3,8 @@ Anibeez::Application.routes.draw do
 
   resources :bookmarks
 
-  devise_for :users
-
+  
+  devise_for :users, :controllers => {:registrations => "users/registrations"}
   get "home/index"
   root :to => 'home#index'
 
