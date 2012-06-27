@@ -8,4 +8,12 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name, :alternate_email, 
                 :dob, :doj, :sex, :address, :phone_no, :status, :conditions
+
+ validates_presence_of :first_name, :length => { :in => 6..20 }, :message => "Shound not be blank and Name   letters in between 4 to 60"
+ validates :last_name, :presence => true
+ validates :sex, :presence => true
+ validates_presence_of :phone_no, :length => { :in => 10..15 }, :message => "is Not valid"
+ validates :address, :presence => true
+ validates_presence_of :conditions , :message=> "must be accepted"
+ 
 end

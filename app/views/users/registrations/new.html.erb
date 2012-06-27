@@ -8,7 +8,7 @@
   <div><%= f.label :last_name %>&nbsp;
   <%= f.text_field :last_name %></div>
   
-  <div><%= f.label :email %>&nbsp;
+  <div><%= f.label :'email', 'Anira Mail id'  %>&nbsp;
   <%= f.email_field :email %></div>
 
   <div><%= f.label :password %>&nbsp;
@@ -17,29 +17,28 @@
   <div><%= f.label :password_confirmation %>&nbsp;
   <%= f.password_field :password_confirmation %></div>
 
-  <div><%= f.label :alternate_email %>&nbsp;
+  <div><%= f.label :'alternate_email', 'Alternate Mail Id' %>&nbsp;
   <%= f.email_field :alternate_email %></div>
 
-  <div><%= f.label :dob %>&nbsp;
+  <div><%= f.label :'dob', 'Date Of Birth' %>&nbsp;
   <%= f.date_select :dob, :start_year => 1950 %></div>
 
-  <div><%= f.label :doj %>&nbsp;
+  <div><%= f.label :'doj', 'Date Of Joining' %>&nbsp;
   <%= f.date_select :doj %></div>
 
-  <div><%= f.label :phone_no %>&nbsp;
-  <%= f.number_field :phone_no %></div>
+  <div><%= f.label :'phone_no', 'Phone Number' %>&nbsp;
+  <%= f.text_field :phone_no %></div>
  
-  <div><%= f.label :sex %>&nbsp;
+  <div><%= f.label :'sex' %>&nbsp;
   <% ["Male", "Female"].each do |item| %>
   <%= f.radio_button :sex, item %> <%= item %>
   <% end %>
   </div>
  
-  <div><%= f.label :address %><br/>
+  <div><%= f.label :'address' ,  'Address For Comunication' %><br/>
   <%= f.text_area :address, rows: 6 %></div>
 
-  <div><%= f.label :conditions %><br/>
-  <%= f.check_box :conditions %></div>
+  <div><%= f.check_box :conditions %>&nbsp;<%= f.label :'conditions','Terms And Conditions' %></div>
    
   <div><%= f.submit "Sign up" %></div>
 <% end %>
