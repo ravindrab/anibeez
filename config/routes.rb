@@ -1,4 +1,6 @@
 Anibeez::Application.routes.draw do
+  resources :links
+
   devise_for :views
 
   resources :bookmarks
