@@ -30,22 +30,22 @@ ActiveRecord::Schema.define(:version => 20120627120016) do
   add_index "links", ["bookmark_id"], :name => "index_links_on_bookmark_id"
 
   create_table "users", :force => true do |t|
-    t.string   "first_name",             :default => "", :null => false
-    t.string   "last_name",              :default => "", :null => false
-    t.string   "email",                  :default => "", :null => false
-    t.string   "encrypted_password",     :default => "", :null => false
+    t.string   "first_name",                           :default => "", :null => false
+    t.string   "last_name",                            :default => "", :null => false
+    t.string   "email",                                :default => "", :null => false
+    t.string   "encrypted_password",                   :default => "", :null => false
     t.string   "alternate_email"
     t.date     "dob"
     t.date     "doj"
     t.string   "sex"
     t.text     "address"
-    t.integer  "phone_no"
-    t.integer  "status",                 :default => 1
-    t.integer  "conditions",             :default => 0
+    t.string   "phone_no",               :limit => 15
+    t.integer  "status",                               :default => 1
+    t.boolean  "conditions"
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          :default => 0
+    t.integer  "sign_in_count",                        :default => 0
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"

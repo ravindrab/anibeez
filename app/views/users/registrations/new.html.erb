@@ -2,16 +2,44 @@
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
+  <div><%= f.label :first_name %>&nbsp;
+  <%= f.text_field :first_name %></div>
 
-  <div><%= f.label :email %><br />
+  <div><%= f.label :last_name %>&nbsp;
+  <%= f.text_field :last_name %></div>
+  
+  <div><%= f.label :'email', 'Anira Mail id'  %>&nbsp;
   <%= f.email_field :email %></div>
 
-  <div><%= f.label :password %><br />
+  <div><%= f.label :password %>&nbsp;
   <%= f.password_field :password %></div>
 
-  <div><%= f.label :password_confirmation %><br />
+  <div><%= f.label :password_confirmation %>&nbsp;
   <%= f.password_field :password_confirmation %></div>
 
+  <div><%= f.label :'alternate_email', 'Alternate Mail Id' %>&nbsp;
+  <%= f.email_field :alternate_email %></div>
+
+  <div><%= f.label :'dob', 'Date Of Birth' %>&nbsp;
+  <%= f.date_select :dob, :start_year => 1950 %></div>
+
+  <div><%= f.label :'doj', 'Date Of Joining' %>&nbsp;
+  <%= f.date_select :doj %></div>
+
+  <div><%= f.label :'phone_no', 'Phone Number' %>&nbsp;
+  <%= f.text_field :phone_no %></div>
+ 
+  <div><%= f.label :'sex' %>&nbsp;
+  <% ["Male", "Female"].each do |item| %>
+  <%= f.radio_button :sex, item %> <%= item %>
+  <% end %>
+  </div>
+ 
+  <div><%= f.label :'address' ,  'Address For Comunication' %><br/>
+  <%= f.text_area :address, rows: 6 %></div>
+
+  <div><%= f.check_box :conditions %>&nbsp;<%= f.label :'conditions','Terms And Conditions' %></div>
+   
   <div><%= f.submit "Sign up" %></div>
 <% end %>
 

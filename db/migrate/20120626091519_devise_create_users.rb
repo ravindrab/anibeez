@@ -11,9 +11,9 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.date :doj
       t.string :sex
       t.text :address
-      t.integer :phone_no, :limit => 15
+      t.string :phone_no, :limit => 15
       t.integer :status, :default => 1
-      t.integer :conditions, :default => 0
+      t.boolean :conditions 
       ## Recoverable
       t.string   :reset_password_token
       t.datetime :reset_password_sent_at
