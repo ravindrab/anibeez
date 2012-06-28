@@ -3,7 +3,7 @@ class BookmarksController < ApplicationController
   # GET /bookmarks.json
   def index
     @bookmarks = Bookmark.all
-
+    @links=Link.all
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @bookmarks }
@@ -14,7 +14,7 @@ class BookmarksController < ApplicationController
   # GET /bookmarks/1.json
   def show
     @bookmark = Bookmark.find(params[:id])
-
+    @links=Link.all
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @bookmark }
@@ -25,7 +25,7 @@ class BookmarksController < ApplicationController
   # GET /bookmarks/new.json
   def new
     @bookmark = Bookmark.new
-
+    @links=Link.all
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @bookmark }
@@ -35,13 +35,14 @@ class BookmarksController < ApplicationController
   # GET /bookmarks/1/edit
   def edit
     @bookmark = Bookmark.find(params[:id])
+    @links=Link.all
   end
 
   # POST /bookmarks
   # POST /bookmarks.json
   def create
     @bookmark = Bookmark.new(params[:bookmark])
-
+    @links=Link.all
     respond_to do |format|
       if @bookmark.save
         format.html { redirect_to @bookmark, notice: 'Bookmark was successfully created.' }
