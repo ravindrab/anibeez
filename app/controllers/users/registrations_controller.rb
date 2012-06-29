@@ -3,7 +3,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def create
   
-puts"#################################", build_resource
+ if verify_recaptcha
     build_resource
 
     if resource.save
@@ -20,5 +20,10 @@ puts"#################################", build_resource
       clean_up_passwords resource
       respond_with resource
     end
-  end
+ 
+   else
+    redirect_to :back
+    flash[:error] = "Failed to create."
+   end
+end
 end

@@ -34,12 +34,15 @@
   <%= f.radio_button :sex, item %> <%= item %>
   <% end %>
   </div>
+
  
   <div><%= f.label :'address' ,  'Address For Comunication' %><br/>
   <%= f.text_area :address, rows: 6 %></div>
 
   <div><%= f.check_box :conditions %>&nbsp;<%= f.label :'conditions','Terms And Conditions' %></div>
-  <%= recaptcha_tags %>
+  <div class="field"> 
+    <%= recaptcha_tags %> 
+   </div>
   <div><%= f.submit "Sign up" %></div>
 <% end %>
 
