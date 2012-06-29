@@ -23,9 +23,9 @@ class BookmarksController < ApplicationController
   # GET /bookmarks/new
   # GET /bookmarks/new.json
   def new
-    @link = Link.find(params[:id])
+    
     @bookmark = Bookmark.new
-    @bookmark = Bookmark.find(params[:id])
+    
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @bookmark }
