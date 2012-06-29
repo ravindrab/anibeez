@@ -39,7 +39,7 @@
   <%= f.text_area :address, rows: 6 %></div>
 
   <div><%= f.check_box :conditions %>&nbsp;<%= f.label :'conditions','Terms And Conditions' %></div>
-   
+  <%= recaptcha_tags %>
   <div><%= f.submit "Sign up" %></div>
 <% end %>
 

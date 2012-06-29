@@ -2,7 +2,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
 
   def create
-
+  
 puts"#################################", build_resource
     build_resource
 
