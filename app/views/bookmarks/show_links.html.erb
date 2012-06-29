@@ -1,0 +1,9 @@
+<h3>Links list</h3>
+<ul>
+<% @bookmark.links.each do |sub| %>
+<li><%= link_to sub.link, show_links_bookmarks_path(:id => sub.id) %></li>
+
+<% end %>
+
+<%= link_to "BACK" , root_path %>
+

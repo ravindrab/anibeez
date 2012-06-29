@@ -1,15 +1,11 @@
 Anibeez::Application.routes.draw do
   
-  resources :links
-
   resources :bookmarks 
+    resources:links
+ 
     
   
   devise_for :views
-
-
-  resources :bookmarks
-
   
   devise_for :users, :controllers => {:registrations => "users/registrations"}
 
