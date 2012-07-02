@@ -81,7 +81,8 @@ class BookmarksController < ApplicationController
   end
 
 def show_links
-    
+    @links = Link.paginate page: params[:page], order: 'created_at desc',
+                per_page:1
     @book = Bookmark.find(params[:id]) 
  end
 

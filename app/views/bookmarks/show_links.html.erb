@@ -1,9 +1,23 @@
-<h3>Links list</h3>
-<% @book.links.each do |sub| %>
-<a href="<%= sub.url %>" target="_blank"><%= sub.url %> </a><%= sub.description %> &nbsp;- <u><%= link_to 'Edit', edit_link_path(:id => sub.id) %></u><br/>
-<% end %><br/>
+<h3>Display Links</h3>
+
+<table>
+  <tr>
+    <th>Url</th>
+    <th>Description</th>
+    
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+   <% @book.links.each do |sub| %>
+   <tr>
+   <td><a href="<%= sub.url %>" target="_blank"><%= sub.url %> </a>  &nbsp; &nbsp; | </td>  
+   <td> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= sub.description %> &nbsp;</td> 
+</tr>
+<% end %>
+
+
+</table>
 
 <%= link_to 'Back', bookmarks_path %>
-
-
-
+<p><%= will_paginate @links %></p>
