@@ -1,6 +1,8 @@
 Anibeez::Application.routes.draw do
   
-  resources :bookmarks 
+  resources :bookmarks do
+  get "show_links", :on => :member
+  end
     resources:links
  
     
