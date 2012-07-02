@@ -2,6 +2,8 @@ class LinksController < ApplicationController
   # GET /links
   # GET /links.json
   def index
+    @links = Link.paginate page: params[:page], order: 'created_at desc',
+                per_page:1
     @links = Link.all
     @bookmarks = Bookmark.all
     respond_to do |format|
@@ -24,6 +26,8 @@ class LinksController < ApplicationController
   # GET /links/new
   # GET /links/new.json
   def new
+    @links = Link.paginate page: params[:page], order: 'created_at desc',
+                per_page:1
     @link = Link.new
     @bookmarks = Bookmark.all
     respond_to do |format|
