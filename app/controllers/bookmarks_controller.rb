@@ -81,7 +81,7 @@ class BookmarksController < ApplicationController
   end
 
 def show_links
-    @links = Link.all    
+    
     @book = Bookmark.find(params[:id]) 
  end
 
