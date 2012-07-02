@@ -16,6 +16,6 @@ class User < ActiveRecord::Base
  validates :address, :presence => true
  validates_presence_of :conditions , :message=> "must be accepted"
  
-
+has_many :activities
 
 end
