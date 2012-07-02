@@ -3,6 +3,7 @@ class BookmarksController < ApplicationController
   # GET /bookmarks.json
   def index
     @bookmarks = Bookmark.all
+    @links = Link.all
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @bookmarks }
@@ -12,7 +13,6 @@ class BookmarksController < ApplicationController
   # GET /bookmarks/1
   # GET /bookmarks/1.json
   def show
-    @bookmarks = Bookmark.all
     @bookmark = Bookmark.find(params[:id]) 
     respond_to do |format|
       format.html # show.html.erb
@@ -22,10 +22,9 @@ class BookmarksController < ApplicationController
 
   # GET /bookmarks/new
   # GET /bookmarks/new.json
-  def new
-    
+  def new  
     @bookmark = Bookmark.new
-    
+    @links = Link.all
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @bookmark }
@@ -35,14 +34,14 @@ class BookmarksController < ApplicationController
   # GET /bookmarks/1/edit
   def edit
     @bookmark = Bookmark.find(params[:id])
-    @link = Link.find(params[:id])
+    @links = Link.all
   end
 
   # POST /bookmarks
   # POST /bookmarks.json
   def create
     @bookmark = Bookmark.new(params[:bookmark])
-  
+    @link = Link.new(params[:link])
     respond_to do |format|
       if @bookmark.save
         format.html { redirect_to @bookmark, notice: 'Bookmark was successfully created.' }
@@ -54,17 +53,10 @@ class BookmarksController < ApplicationController
     end
   end
 
-  def show_links
-    @bookmarks = Bookmark.all
-     
-    @bookmark = Bookmark.find(params[:id]) 
- end
-
   # PUT /bookmarks/1
   # PUT /bookmarks/1.json
   def update
     @bookmark = Bookmark.find(params[:id])
-
     respond_to do |format|
       if @bookmark.update_attributes(params[:bookmark])
         format.html { redirect_to @bookmark, notice: 'Bookmark was successfully updated.' }
@@ -87,4 +79,10 @@ class BookmarksController < ApplicationController
       format.json { head :ok }
     end
   end
+
+def show_links
+    @links = Link.all    
+    @book = Bookmark.find(params[:id]) 
+ end
+
 end
