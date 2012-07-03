@@ -2,8 +2,7 @@ class LinksController < ApplicationController
   # GET /links
   # GET /links.json
   def index
-    @links = Link.paginate page: params[:page], order: 'created_at desc',
-                per_page:1
+    
     @links = Link.all
     @bookmarks = Bookmark.all
     respond_to do |format|
@@ -16,7 +15,7 @@ class LinksController < ApplicationController
   # GET /links/1.json
   def show
     @link = Link.find(params[:id])
-    @bookmark = Bookmark.find(params[:id])
+    @bookmarks = Bookmark.all
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @link }
@@ -26,8 +25,7 @@ class LinksController < ApplicationController
   # GET /links/new
   # GET /links/new.json
   def new
-    @links = Link.paginate page: params[:page], order: 'created_at desc',
-                per_page:1
+    
     @link = Link.new
     @bookmarks = Bookmark.all
     respond_to do |format|

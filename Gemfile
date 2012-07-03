@@ -17,7 +17,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
-gem 'will_paginate', '~> 3.0'
+
 gem 'devise'
 gem "recaptcha", :require => "recaptcha/rails"
 
