@@ -17,5 +17,5 @@ class User < ActiveRecord::Base
  validates_presence_of :conditions , :message=> "must be accepted"
  
 has_many :activities
-
+has_many :comments
 end

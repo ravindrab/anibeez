@@ -9,7 +9,11 @@
   <b>User:</b>
   <%= @activity.user.first_name %>
 </p>
+<h2>Comments</h2>
+<%= render @activity.comments %>
 
+<h2>Add a comment:</h2>
+<%= render "comments/form" %>
 
 <%= link_to 'Edit', edit_activity_path(@activity) %> |
 <%= link_to 'Back', activities_path %>

@@ -1,9 +1,9 @@
 Anibeez::Application.routes.draw do
   
 
+  resources :activities do
   resources :comments
-
-  resources :activities
+  end
 
   resources :bookmarks 
 
@@ -19,7 +19,7 @@ Anibeez::Application.routes.draw do
   
   devise_for :users, :controllers => {:registrations => "users/registrations"}
 
-  devise_for :users
+  devise_for :users 
 
 
   get "home/index"
