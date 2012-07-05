@@ -80,8 +80,8 @@ class BookmarksController < ApplicationController
     end
   end
 
-def show_links
-    
+# GET /links/1
+def show_links  
     @book = Bookmark.find(params[:id]) 
  end
 

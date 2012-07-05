@@ -3,17 +3,22 @@ Anibeez::Application.routes.draw do
 
   resources :activities do
   resources :comments
+<<<<<<< HEAD
   end
 
   resources :bookmarks 
+=======
+
+  resources :activities
+ 
+>>>>>>> 5cb1ca0aa40fcc1501462d5be7a39c601703da03
 
   resources :bookmarks do
   get "show_links", :on => :member
   end
 
     resources:links
- 
-    
+  
   
   devise_for :views
   
