@@ -85,6 +85,4 @@ def show_links
     @book = Bookmark.find(params[:id]) 
  end
 
-d
-
 end
