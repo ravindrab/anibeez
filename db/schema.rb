@@ -30,13 +30,13 @@ ActiveRecord::Schema.define(:version => 20120703113555) do
 
   create_table "comments", :force => true do |t|
     t.text     "post"
-    t.integer  "Activity_id"
+    t.integer  "activity_id"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "comments", ["Activity_id"], :name => "index_comments_on_Activity_id"
+  add_index "comments", ["activity_id"], :name => "index_comments_on_activity_id"
   add_index "comments", ["user_id"], :name => "index_comments_on_user_id"
 
   create_table "links", :force => true do |t|

@@ -16,12 +16,12 @@
     <%= f.text_area :post %>
   </div>
   <div class="field">
-    <%= f.label :Activity %><br />
-    <%= f.text_field :Activity %>
+    <%= f.label :activity %><br />
+    <%= f.collection_select(:activity_id, Activity.all, :id, :query, {:prompt => true}) %>
   </div>
   <div class="field">
     <%= f.label :user %><br />
-    <%= f.text_field :user %>
+    <%= f.collection_select(:user_id, User.all, :id, :first_name, {:prompt => true}) %>
   </div>
   <div class="actions">
     <%= f.submit %>

@@ -1,5 +1,5 @@
 class Comment < ActiveRecord::Base
-  belongs_to :Activity
+  belongs_to :activity
   belongs_to :user
 
 
