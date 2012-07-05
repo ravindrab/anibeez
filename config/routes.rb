@@ -1,6 +1,8 @@
 Anibeez::Application.routes.draw do
   
 
+  resources :comments
+
   resources :activities
  
 

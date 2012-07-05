@@ -3,7 +3,8 @@ class ActivitiesController < ApplicationController
   # GET /activities.json
   def index
     @activities = Activity.all
-
+     
+  
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @activities }
@@ -80,4 +81,5 @@ class ActivitiesController < ApplicationController
       format.json { head :ok }
     end
   end
+
 end
