@@ -4,7 +4,7 @@
   <tr>
     <th>Url</th>
     <th>Description</th>
-    <th>Bookmark</th>
+    
     <th></th>
     <th></th>
     <th></th>
@@ -12,11 +12,9 @@
 
 <% @links.each do |link| %>
   <tr>
-    <td><%= link.url %></td>
-    <td><%= link.description %></td>
-    <td><%= link.bookmark_id %></td>
-    <td><%= link_to 'Show', link %></td>
-    <td><%= link_to 'Edit', edit_link_path(link) %></td>
+    <td> &nbsp; &nbsp;&nbsp;<a href="<%= link.url %>" target="_blank"><%= link.url %> </a></td> 
+    <td><%= link.description %></td> &nbsp; &nbsp; &nbsp;  
+    <td><%= link_to 'Edit', edit_link_path(link) %> ||</td>
     <td><%= link_to 'Destroy', link, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>

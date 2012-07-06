@@ -7,7 +7,7 @@
 <% @bookmarks.each do |bookmark| %>
   <tr>
     <td><%=  link_to bookmark.name, show_links_bookmark_path(:id => bookmark.id) %></td> 
-    <td><%= link_to 'Edit', edit_bookmark_path(bookmark) %>  |  
+    <td><%= link_to 'Edit', edit_bookmark_path(bookmark) %>  | | 
     <%= link_to 'Destroy', bookmark, confirm: 'Are you sure?', method: :delete %></td>
 <% end %>
 
