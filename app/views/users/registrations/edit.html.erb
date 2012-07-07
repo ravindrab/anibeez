@@ -1,25 +1,108 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<html>
 
+<head>
+
+<title>ANIBEES</title>
+
+<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+
+</head>
+
+<body>
+
+<div class="home"><!--home container starts-->
+
+<div id="header"><!--Header starts-->
+
+<div class="logo"><a href="#" title="Anibees"><img src="/assets/logo.png" alt="Anibees logo"/></a></div>
+ 
+<div class="table"><!--table starts-->
+ <table>
+
+	<tr>
+ 
+	  <td>&nbsp;</td>
+
+	  <td><font color="#eee">Follow us:</font></td>
+         
+	  <td><a href="#"><img src="/assets/Twitter.png" height="24" width="24"/></a></td>
+
+	  <td><a href="#"><img src="/assets/Facebook.png" height="24" width="24"/></a></td>
+
+	  <td><a href="#"><img src="/assets/LinkedIn.png" height="24" width="24"/></a></td>
+
+        </tr>
+
+  </table>
+
+</div><!--table ends-->
+
+</div><!--header ends-->
+
+<div id="main_container"><!--main_container starts-->
+
+<div id="middlebg"><!--middlebg starts-->
+<u><h1 align="center">Edit Profile</h1></u>
+<br/>
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
   <%= devise_error_messages! %>
+  <div class="form_align"><%= f.label :first_name %>&nbsp;
+  <%= f.text_field :first_name %></div>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
+  <div class="form_align"><%= f.label :last_name %>&nbsp;
+  <%= f.text_field :last_name %></div>
+  
+  
 
-  <div><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-  <%= f.password_field :password, :autocomplete => "off" %></div>
+  <div class="form_align"><%= f.label :'alternate_email', 'Alternate Mail Id' %>&nbsp;
+  <%= f.email_field :alternate_email %></div>
 
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
+  <div class="form_align"><%= f.label :'dob', 'Date Of Birth' %>&nbsp;
+  <%= f.date_select :dob, :start_year => 1950 %></div>
 
-  <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-  <%= f.password_field :current_password %></div>
+  <div class="form_align"><%= f.label :'doj', 'Date Of Joining' %>&nbsp;
+  <%= f.date_select :doj %></div>
 
-  <div><%= f.submit "Update" %></div>
+  <div class="form_align"><%= f.label :'phone_no', 'Phone Number' %>&nbsp;
+  <%= f.text_field :phone_no %></div>
+ 
+  <div class="form_align"><%= f.label :'sex' %>&nbsp;
+  <% ["Male", "Female"].each do |item| %>
+  <%= f.radio_button :sex, item %> <%= item %>
+  <% end %>
+  </div>
+
+ 
+  <div class="form_align"><%= f.label :'address' ,  'Address For Comunication' %><br/>
+  <%= f.text_area :address, rows: 6 %></div>
+
 <% end %>
-
 <h3>Cancel my account</h3>
 
 <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), :confirm => "Are you sure?", :method => :delete %>.</p>
 
 <%= link_to "Back", :back %>
+
+<br/><br/><br/>
+
+
+
+</div><!--middlebg ends-->
+<div id="footer"><!--footer starts-->
+<span>Copyright &copy; 2012 <a href="http://www.anirasolutions.net" target="blank">Anira</span>
+</div><!--footer ends-->
+
+</div><!--main_container ends-->
+
+</div><!--home container ends-->
+
+</body>
+</html>
+
+
+
+
+
+
+
+
