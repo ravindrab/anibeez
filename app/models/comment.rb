@@ -1,4 +1,7 @@
 class Comment < ActiveRecord::Base
-  belongs_to :activity
+ 
+validates :body, :presence => true 
+ 
+belongs_to :activity
   belongs_to :user
 end
