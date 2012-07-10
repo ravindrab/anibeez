@@ -18,9 +18,10 @@ end
 
 gem 'jquery-rails'
 
+gem "paperclip", "~> 3.0"
 gem 'devise'
 gem "recaptcha", :require => "recaptcha/rails"
-
+gem "meta_search"
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
