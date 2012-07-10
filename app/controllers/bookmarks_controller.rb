@@ -2,7 +2,8 @@ class BookmarksController < ApplicationController
   # GET /bookmarks
   # GET /bookmarks.json
   def index
-    @bookmarks = Bookmark.all
+  @search = Bookmark.search(params[:search])
+  @bookmarks = @search.all
     @links = Link.all
     respond_to do |format|
       format.html # index.html.erb

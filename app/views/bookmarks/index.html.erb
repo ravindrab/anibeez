@@ -3,7 +3,13 @@
 <h1>Display Bookmarks</h1>
 
 <table>
-  
+  <%= form_for @search do |f| %>
+    <%= f.label :name_contains, "Search by name of the book:" %>&nbsp;
+    <%= f.text_field :name_contains %>&nbsp;
+    
+    <!-- etc... -->
+    <%= f.submit %>
+<% end %><br /><br />
 <% @bookmarks.each do |bookmark| %>
   <tr>
     <td><%=  link_to bookmark.name, show_links_bookmark_path(:id => bookmark.id) %></td> 
