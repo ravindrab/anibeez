@@ -1,4 +1,13 @@
 <h1>Welcome <%= @user.first_name %>&nbsp;<%= @user.last_name %></h1>
 
 <%= link_to 'Update profile', edit_user_registration_path %>
-</table>
+
+<h2>User search</h2>
+<%= form_for @search, :url => users_path, :html => { :method => :get } do |f| %>
+#some form elements
+<% end %>
+
+<% @users.each do |user| %> 
+# show user info
+<% end %>
+
