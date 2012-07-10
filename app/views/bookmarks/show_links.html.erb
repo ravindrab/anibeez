@@ -3,8 +3,8 @@
 <table>
   <tr>
     <th>Url</th>
-    <th>Description</th>
-    
+    <th>Description</th>&nbsp; &nbsp;
+    <th>&nbsp; &nbsp; Bookmark</th>
     <th></th>
     <th></th>
     <th></th>
@@ -12,10 +12,10 @@
    <% @book.links.each do |sub| %>
    <tr>
    <td><a href="<%= sub.url %>" target="_blank"><%= sub.url %> </a>  &nbsp; &nbsp;  </td>  
-   <td> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= sub.description %> &nbsp;</td> 
+   <td> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= sub.description %> </td> 
+   <td> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= sub.bookmark.name %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td> 
 </tr>
 <% end %>
-
 
 </table>
 

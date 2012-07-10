@@ -21,7 +21,6 @@
   </div>
   <div class="field">
     <%= f.label :bookmark %><br />
-
     <%= f.collection_select(:bookmark_id, Bookmark.all, :id, :name, {:prompt => true}) %>
   </div>
   <div class="actions">

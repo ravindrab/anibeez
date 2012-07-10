@@ -2,7 +2,7 @@ class BookmarksController < ApplicationController
   # GET /bookmarks
   # GET /bookmarks.json
   def index
-    @bookmarks = Bookmark.all
+  @bookmarks = Bookmark.all
     @links = Link.all
     respond_to do |format|
       format.html # index.html.erb
@@ -10,10 +10,12 @@ class BookmarksController < ApplicationController
     end
   end
 
+
   # GET /bookmarks/1
   # GET /bookmarks/1.json
   def show
     @bookmark = Bookmark.find(params[:id]) 
+    @links = Link.all
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @bookmark }
@@ -82,7 +84,10 @@ class BookmarksController < ApplicationController
 
 # GET /links/1
 def show_links  
+    @links = Link.all
     @book = Bookmark.find(params[:id]) 
  end
 
-end
+  end
+
+
