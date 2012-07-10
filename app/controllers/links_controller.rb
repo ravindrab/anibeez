@@ -83,5 +83,8 @@ class LinksController < ApplicationController
       format.json { head :ok }
     end
   end
-
+def show_bookmarks
+  @bookmarks = Bookmark.all
+  @book = link.find(params[:id])  
+end
 end

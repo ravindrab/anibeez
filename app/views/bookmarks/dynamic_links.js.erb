@@ -1,0 +1,10 @@
+$('#bookmark_link_id').empty();
+<% for link in @links %>
+
+
+   // alert(<%= link.id %>);
+
+      $('#bookmark_link_id').append($("<option></option>").attr("value",<%= link.id %>).text('<%= link.link_url %>'));
+
+
+<% end %>

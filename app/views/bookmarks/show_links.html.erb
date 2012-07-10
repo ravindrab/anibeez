@@ -4,7 +4,7 @@
   <tr>
     <th>Url</th>
     <th>Description</th>
-    
+    <th>Bookmark</th>
     <th></th>
     <th></th>
     <th></th>
@@ -12,10 +12,10 @@
    <% @book.links.each do |sub| %>
    <tr>
    <td><a href="<%= sub.url %>" target="_blank"><%= sub.url %> </a>  &nbsp; &nbsp;  </td>  
-   <td> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= sub.description %> &nbsp;</td> 
-</tr>
-<% end %>
-
+   <td> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= sub.description %> &nbsp;</td>
+   <td><%= sub.bookmark.name %></td>
+  </tr>
+ <% end %>
 
 </table>
 
