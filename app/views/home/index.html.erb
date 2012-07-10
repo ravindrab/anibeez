@@ -1,4 +1,8 @@
 <h1>Welcome <%= @user.first_name %>&nbsp;<%= @user.last_name %></h1>
 
 <%= link_to 'Update profile', edit_user_registration_path %>
-</table>
+
+<%= image_tag @user.avatar.url %>
+<%= image_tag @user.avatar.url(:medium) %>
+<%= image_tag @user.avatar.url(:thumb) %>
+

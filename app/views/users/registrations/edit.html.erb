@@ -46,7 +46,9 @@
 <br/>
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
   <%= devise_error_messages! %>
+
  <table align="center">
+<%= f.file_field :avatar %>
 <tr>
   <td><%= f.label :first_name %></td><td>
   <%= f.text_field :first_name %></td></tr>
