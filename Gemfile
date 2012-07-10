@@ -18,6 +18,7 @@ end
 
 gem 'jquery-rails'
 
+gem "paperclip", "~> 3.0"
 gem 'devise'
 gem "recaptcha", :require => "recaptcha/rails"
 gem "meta_search"

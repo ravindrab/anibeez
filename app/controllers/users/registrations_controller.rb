@@ -3,6 +3,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def create
   
+@user = User.create( params[:user] )
  if verify_recaptcha
     build_resource
 

@@ -18,4 +18,7 @@ class User < ActiveRecord::Base
  
 has_many :activities
 has_many :comments
+
+attr_accessible :avatar
+  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }
 end

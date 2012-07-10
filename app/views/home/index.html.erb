@@ -1,9 +1,17 @@
 <h1>Welcome <%= @user.first_name %>&nbsp;<%= @user.last_name %></h1>
 
+
 <%= link_to 'Update profile', edit_user_registration_path %><br/>
 <%= link_to 'Recent Activities', activities_path  %><br/>
 <%= link_to 'Bookmarks', bookmarks_path  %>
 
 
+
+
+<%= link_to 'Update profile', edit_user_registration_path %>
+
+<%= image_tag @user.avatar.url %>
+<%= image_tag @user.avatar.url(:medium) %>
+<%= image_tag @user.avatar.url(:thumb) %>
 
 
