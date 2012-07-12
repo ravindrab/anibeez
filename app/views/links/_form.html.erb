@@ -22,9 +22,23 @@
   <div class="field">
     <%= f.label :bookmark %><br />
 
-    <%= f.collection_select(:bookmark_id, Bookmark.all, :id, :name, {:prompt => true}) %>
+    <%= f.collection_select(:bookmark_id, Bookmark.where(:bookmark_id=>@bookmark.link_id ), :id, :name,{:include_blank => 'Please Select'})%>
+ 
   </div>
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+
+<script>
+$("#bookmark_link_id").change(function() {
+     id = $(this).val();
+     $.ajax({//Make the Ajax Request
+        type: "GET",
+        url: "/bookmarks/get_links?cid="+id  ,
+     
+    });
+  });
+
+</script>
+

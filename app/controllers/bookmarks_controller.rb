@@ -2,7 +2,8 @@ class BookmarksController < ApplicationController
   # GET /bookmarks
   # GET /bookmarks.json
   def index
-    @bookmarks = Bookmark.all
+  @search = Bookmark.search(params[:search])
+  @bookmarks = @search.all
     @links = Link.all
     respond_to do |format|
       format.html # index.html.erb
@@ -82,7 +83,20 @@ class BookmarksController < ApplicationController
 
 # GET /links/1
 def show_links  
+    @links = Link.all
     @book = Bookmark.find(params[:id]) 
  end
+def get_links
 
+  @links = link.where(:bookmark_id=>params[:cid])
+  puts "####################  In method : #{@links.map(&:link_url)}"
+end
+
+def dynamic_links
+    @links = Link.find_all_by_bookamrk_id(params[:id])
+
+    respond_to do |format|
+      format.js
+    end
+  end
 end

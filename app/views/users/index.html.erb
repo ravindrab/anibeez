@@ -1,5 +1,5 @@
 <h1>Welcome <%= @user.first_name %>&nbsp;<%= @user.last_name %></h1>
-<%= image_tag @user.avatar.url(:thumb) %><br/><%= image_tag @user.avatar.url(:medium) %><br/>
+<%= image_tag @user.avatar.url(:thumb) %><br/><br/>
 
 <%= link_to 'Update profile', edit_user_registration_path %><br/>
 <%= link_to 'Recent Activities', activities_path  %><br/>

@@ -18,4 +18,13 @@ class User < ActiveRecord::Base
  
 has_many :activities
 has_many :comments
+
+attr_accessible :avatar
+  has_attached_file :avatar, :styles => {
+      :thumb => "100x100#",
+      :small  => "150x150>",
+      :medium => "200x200" }
+validates_attachment :avatar,
+  :content_type => { :content_type=>['image/jpeg', 'image/png', 'image/gif'] },
+  :size => { :in => 0..4000.kilobytes }
 end
