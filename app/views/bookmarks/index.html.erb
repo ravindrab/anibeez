@@ -1,7 +1,4 @@
 
-
-
-
 <html>
 
 <head>
@@ -120,8 +117,6 @@
   <%= form_for @search do |f| %>
     <%= f.label :name_contains, "Search by name of the book:" %>&nbsp;
     <%= f.text_field :name_contains %>&nbsp;
-    
-    <!-- etc... -->
     <%= f.submit %>
 <% end %><br /><br />
 <% @bookmarks.each do |bookmark| %>

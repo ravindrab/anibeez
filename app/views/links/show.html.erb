@@ -9,6 +9,9 @@
   <b>Description:</b>
   <%= @link.description %>
 </p>
-
+<p>
+  <b>Bookmark:</b>
+  <%= @link.bookmark.name %>
+</p>
 <%= link_to 'Edit', edit_link_path(@link) %> |
 <%= link_to 'Back', links_path %>
