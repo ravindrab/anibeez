@@ -2,20 +2,21 @@ class BookmarksController < ApplicationController
   # GET /bookmarks
   # GET /bookmarks.json
   def index
-  @bookmarks = Bookmark.all
-    @links = Link.all
+    @search = Bookmark.search(params[:search])
+    @bookmarks = @search.all
+     @links = Link.all
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @bookmarks }
     end
   end
 
-
   # GET /bookmarks/1
   # GET /bookmarks/1.json
   def show
     @bookmark = Bookmark.find(params[:id]) 
     @links = Link.all
+    @book = Bookmark.find(params[:id]) 
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @bookmark }
@@ -46,7 +47,7 @@ class BookmarksController < ApplicationController
     @link = Link.new(params[:link])
     respond_to do |format|
       if @bookmark.save
-        format.html { redirect_to @bookmark, notice: 'Bookmark was successfully created.' }
+        format.html { redirect_to bookmarks_path, notice: 'Bookmark was successfully created.' }
         format.json { render json: @bookmark, status: :created, location: @bookmark }
       else
         format.html { render action: "new" }
@@ -61,7 +62,7 @@ class BookmarksController < ApplicationController
     @bookmark = Bookmark.find(params[:id])
     respond_to do |format|
       if @bookmark.update_attributes(params[:bookmark])
-        format.html { redirect_to @bookmark, notice: 'Bookmark was successfully updated.' }
+        format.html { redirect_to bookmarks_path, notice: 'Bookmark was successfully updated.' }
         format.json { head :ok }
       else
         format.html { render action: "edit" }
@@ -82,11 +83,10 @@ class BookmarksController < ApplicationController
     end
   end
 
-# GET /links/1
-def show_links  
-    @links = Link.all
-    @book = Bookmark.find(params[:id]) 
- end
+  def show_links  
+
+   @book = Bookmark.find(params[:id])
+end
 
   end
 

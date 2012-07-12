@@ -43,11 +43,14 @@
 
 <div id="middlebg"><!--middlebg starts-->
 <u><h1 align="center">Registration form</h1></u>
+
+
 <br/>
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 <div>
 <table align="center">
+
 <tr>
   <td><%= f.label :first_name %></td><td>
   <%= f.text_field :first_name %></td></tr>
