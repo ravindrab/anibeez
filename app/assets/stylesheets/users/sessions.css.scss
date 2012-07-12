@@ -1,3 +1,136 @@
 // Place all the styles related to the users::sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body{ font-family:Arial, Helvetica, sans-serif;
+      font-size:12px;
+	  color:#666;
+	  line-height:19px;
+	 margin:0px;
+	padding:0px;
+	height:550px;
+	background-image:url(/assets/body_bg.jpg);
+	background-repeat:repeat-x;
+	
+}
+body.home{
+	
+	line-height:19px;
+	text-align:justify;
+
+}
+img{
+
+	border:none;
+}
+a  {
+	outline:none;
+	text-decoration:none;
+}
+p
+{
+	margin:15px 0px 0px 0px;
+}
+#main_container{
+	margin:0px auto;
+	padding:0px;
+	width:960px;
+	overflow:hidden
+}
+
+#main_container #middlebg{
+	margin:0px 0px 0px 0px;
+	overflow:hidden;
+	width:940px;
+	background-color:#E8E8E8 ;
+	border:1px solid #000;
+border-radius:20px;
+-moz-border-radius:30px; 
+}
+#header{
+	margin:0px 0 -20px 0;
+	padding:0px;
+	height:120px;
+	
+	overflow:hidden;
+	background:#383838 repeat-x ;
+	}
+#header .logo{
+	margin:28px 0px 0px 180px;
+	float:left;
+	}
+
+#body_content{
+	margin:15px 0px 15px 17px;
+	
+	overflow:hidden;
+}
+#body_content #innerbox{
+	margin:0px 0px 0px 0px;
+	float:left;
+	overflow:hidden;
+	
+	padding-bottom:20px;
+}
+#body_content #innerbox .left{
+	margin:0px;
+	width:450px;
+	float:left;
+	overflow:hidden;
+	text-align:justify;
+	padding-right:24px;
+	}
+#body_content #innerbox .right{
+	margin:60px 0 0 10px;
+	width:380px;
+	float:right;
+
+	}
+
+#footer{
+	
+	clear:both;
+	text-align:center;
+	margin:10px 0px 20px 0px;
+	padding:0px;
+	overflow:hidden;
+	width:100%;
+	color:#eee;
+
+	
+	
+	}
+
+
+fieldset { border:0px solid #383838 ;
+border:2px none;
+	border-radius:25px;
+	-moz-border-radius:25px;
+	box-shadow: 10px 10px 5px #888888;
+background: url('/assets/Opera-Background-Light-Blue.jpg');
+
+background-position:10% 0%;
+}
+.table
+{
+	
+	float:right;
+	margin:60px 200px 0px 0px;
+	color:#eee;
+}
+h1
+{
+	color:#0099CC;
+	font-family:Times New Roman;
+}
+h2
+{
+	color:#0099CC;
+	font-family:Times New Roman;
+}
+
+.a-right
+{
+	float:right;
+}
+

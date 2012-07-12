@@ -74,6 +74,7 @@ class ActivitiesController < ApplicationController
   # DELETE /activities/1.json
   def destroy
     @activity = Activity.find(params[:id])
+    
     @activity.destroy
 
     respond_to do |format|

@@ -1,9 +1,12 @@
 class BookmarksController < ApplicationController
-  # GET /bookmarks
+ layout "bookmarks" 
+# GET /bookmarks
   # GET /bookmarks.json
   def index
-    @bookmarks = Bookmark.all
+  @search = Bookmark.search(params[:search])
+  @bookmarks = @search.all
     @links = Link.all
+ @user=current_user
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @bookmarks }
@@ -13,6 +16,7 @@ class BookmarksController < ApplicationController
   # GET /bookmarks/1
   # GET /bookmarks/1.json
   def show
+ 
     @bookmark = Bookmark.find(params[:id]) 
     respond_to do |format|
       format.html # show.html.erb
@@ -23,6 +27,7 @@ class BookmarksController < ApplicationController
   # GET /bookmarks/new
   # GET /bookmarks/new.json
   def new  
+
     @bookmark = Bookmark.new
     @links = Link.all
     respond_to do |format|
@@ -33,6 +38,7 @@ class BookmarksController < ApplicationController
 
   # GET /bookmarks/1/edit
   def edit
+
     @bookmark = Bookmark.find(params[:id])
     @links = Link.all
   end
@@ -40,6 +46,7 @@ class BookmarksController < ApplicationController
   # POST /bookmarks
   # POST /bookmarks.json
   def create
+
     @bookmark = Bookmark.new(params[:bookmark])
     @link = Link.new(params[:link])
     respond_to do |format|
@@ -55,7 +62,9 @@ class BookmarksController < ApplicationController
 
   # PUT /bookmarks/1
   # PUT /bookmarks/1.json
+
   def update
+ 
     @bookmark = Bookmark.find(params[:id])
     respond_to do |format|
       if @bookmark.update_attributes(params[:bookmark])
@@ -71,6 +80,7 @@ class BookmarksController < ApplicationController
   # DELETE /bookmarks/1
   # DELETE /bookmarks/1.json
   def destroy
+   
     @bookmark = Bookmark.find(params[:id])
     @bookmark.destroy
 
@@ -82,6 +92,7 @@ class BookmarksController < ApplicationController
 
 # GET /links/1
 def show_links  
+ 
     @book = Bookmark.find(params[:id]) 
  end
 

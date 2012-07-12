@@ -1,10 +1,12 @@
 class LinksController < ApplicationController
+layout "links"
   # GET /links
   # GET /links.json
   def index
     
     @links = Link.all
     @bookmarks = Bookmark.all
+ @user=current_user
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @links }
@@ -16,6 +18,7 @@ class LinksController < ApplicationController
   def show
     @link = Link.find(params[:id])
     @bookmarks = Bookmark.all
+ @user=current_user
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @link }
@@ -28,6 +31,7 @@ class LinksController < ApplicationController
     
     @link = Link.new
     @bookmarks = Bookmark.all
+ @user=current_user
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @link }
@@ -38,6 +42,7 @@ class LinksController < ApplicationController
   def edit
     @link = Link.find(params[:id])
     @bookmarks = Bookmark.all
+ @user=current_user
   end
 
   # POST /links
@@ -45,6 +50,7 @@ class LinksController < ApplicationController
   def create
     @link = Link.new(params[:link])
     @bookmarks = Bookmark.all
+ @user=current_user
     respond_to do |format|
       if @link.save
         format.html { redirect_to @link, notice: 'Link was successfully created.' }
@@ -59,6 +65,7 @@ class LinksController < ApplicationController
   # PUT /links/1
   # PUT /links/1.json
   def update
+ @user=current_user
     @link = Link.find(params[:id])
 
     respond_to do |format|
@@ -75,6 +82,7 @@ class LinksController < ApplicationController
   # DELETE /links/1
   # DELETE /links/1.json
   def destroy
+ @user=current_user
     @link = Link.find(params[:id])
     @link.destroy
 
