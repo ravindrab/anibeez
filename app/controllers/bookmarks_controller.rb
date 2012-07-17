@@ -1,10 +1,17 @@
 class BookmarksController < ApplicationController
-  # GET /bookmarks
+ layout "bookmarks" 
+# GET /bookmarks
   # GET /bookmarks.json
   def index
+
   @search = Bookmark.search(params[:search])
   @bookmarks = @search.all
     @links = Link.all
+ @user=current_user
+
+    @search = Bookmark.search(params[:search])
+    @bookmarks = @search.all
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @bookmarks }
@@ -14,7 +21,10 @@ class BookmarksController < ApplicationController
   # GET /bookmarks/1
   # GET /bookmarks/1.json
   def show
+ 
     @bookmark = Bookmark.find(params[:id]) 
+    @links = Link.all
+    @book = Bookmark.find(params[:id]) 
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @bookmark }
@@ -24,6 +34,7 @@ class BookmarksController < ApplicationController
   # GET /bookmarks/new
   # GET /bookmarks/new.json
   def new  
+
     @bookmark = Bookmark.new
     @links = Link.all
     respond_to do |format|
@@ -34,6 +45,7 @@ class BookmarksController < ApplicationController
 
   # GET /bookmarks/1/edit
   def edit
+
     @bookmark = Bookmark.find(params[:id])
     @links = Link.all
   end
@@ -41,11 +53,12 @@ class BookmarksController < ApplicationController
   # POST /bookmarks
   # POST /bookmarks.json
   def create
+
     @bookmark = Bookmark.new(params[:bookmark])
     @link = Link.new(params[:link])
     respond_to do |format|
       if @bookmark.save
-        format.html { redirect_to @bookmark, notice: 'Bookmark was successfully created.' }
+        format.html { redirect_to bookmarks_path, notice: 'Bookmark was successfully created.' }
         format.json { render json: @bookmark, status: :created, location: @bookmark }
       else
         format.html { render action: "new" }
@@ -56,11 +69,13 @@ class BookmarksController < ApplicationController
 
   # PUT /bookmarks/1
   # PUT /bookmarks/1.json
+
   def update
+ 
     @bookmark = Bookmark.find(params[:id])
     respond_to do |format|
       if @bookmark.update_attributes(params[:bookmark])
-        format.html { redirect_to @bookmark, notice: 'Bookmark was successfully updated.' }
+        format.html { redirect_to bookmarks_path, notice: 'Bookmark was successfully updated.' }
         format.json { head :ok }
       else
         format.html { render action: "edit" }
@@ -72,6 +87,7 @@ class BookmarksController < ApplicationController
   # DELETE /bookmarks/1
   # DELETE /bookmarks/1.json
   def destroy
+   
     @bookmark = Bookmark.find(params[:id])
     @bookmark.destroy
 
@@ -81,22 +97,19 @@ class BookmarksController < ApplicationController
     end
   end
 
+
 # GET /links/1
 def show_links  
-    @links = Link.all
+ 
     @book = Bookmark.find(params[:id]) 
  end
-def get_links
 
-  @links = link.where(:bookmark_id=>params[:cid])
-  puts "####################  In method : #{@links.map(&:link_url)}"
+  def show_links  
+
+
+   @book = Bookmark.find(params[:id])
 end
 
-def dynamic_links
-    @links = Link.find_all_by_bookamrk_id(params[:id])
-
-    respond_to do |format|
-      format.js
-    end
   end
-end
+
+

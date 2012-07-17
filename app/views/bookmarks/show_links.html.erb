@@ -1,24 +1,163 @@
+
+<html>
+
+<head>
+
+<title>ANIBEES</title>
+<!--Include the jQuery plugin's file-->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+ 
+<script>
+  $(document).ready(function() {
+    $("input#autocomplete").autocomplete({
+    source: ["name1", "name2", "name3", "name4", "name5", "name6", "name7","name8","name9","name10","name11","name12"]
+});
+});
+</script>
+<!--Include the css file-->
+
+<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+
+
+
+</head>
+
+<body>
+
+<div class="home"><!--home container starts-->
+
+<div id="header"><!--Header starts-->
+
+  <div class="logo"><a href="#" title="Anibees"><img src="/assets/logo.png" alt="Anibees logo"/></a></div>
+ 
+   <div class="table"><table><!--table content starts-->
+
+	<tr>
+ 
+	  <td>&nbsp;</td>
+
+	  <td><font color="#eee">Follow us:</font></td>
+
+         
+
+	  <td><a href="#"><img src="/assets/Twitter.png" height="24" width="24"/></a></td>
+
+	  <td><a href="#"><img src="/assets/Facebook.png" height="24" width="24"/></a></td>
+
+	  <td><a href="#"><img src="/assets/LinkedIn.png" height="24" width="24"/></a></td>
+
+        </tr>
+
+  </table>
+
+   </div><!--table content ends-->
+
+</div><!--header ends-->
+
+<div id="main_container"><!--main_container starts-->
+
+
+ <div id="middlebg"><!--middlebg starts-->
+
+
+  <div id="body_content"><!--body_content starts-->
+
+
+
+   <div id="innerbox"><!--innerbox1 starts-->
+
+    <div class="left"><!--inner left starts-->
+
+<div style="padding:15px;margin-left:25px">
+<img src="#" width="150" height="150" title="User Photo">
+</div>
+	<div id="navigation">
+<%= image_tag @user.avatar.url(:medium) %></br>
+    	<ul class="top-level">
+        <li><%= link_to 'Update profile', edit_user_registration_path %></li>
+        <li><%= link_to 'Recent Activities', activities_path  %></li>
+        <li><%= link_to 'Bookmarks', bookmarks_path  %></li>
+        <li><a href="#">FRIENDS LIST</a></li>
+        <li><a href="#">PRESENTATIONS</a></li>
+<br/>
+<div style="margin-left:3px;">
+<input id="autocomplete"/ size="18px"><br /><!--autocomplete -->
+<select name=memlist size=10 onChange="showmem(this.form )" style="width:215px;">
+<option selected value="John Smith|password|mainpage|">Name1
+<option value="Peter Jones|theirpwd|endpages|">Name2
+<option value="Sue Brown|asdfvcxz|nowheres|">Name3
+<option value="Sally West|zaqxswde|logintop|">Name4
+<option value="Sally West|zaqxswde|logintop|">Name5
+<option value="Sally West|zaqxswde|logintop|">Name6
+<option value="Sally West|zaqxswde|logintop|">Name7
+<option value="Sally West|zaqxswde|logintop|">Name8
+<option value="Sally West|zaqxswde|logintop|">Name9
+<option value="Sally West|zaqxswde|logintop|">Name10
+<option value="Sally West|zaqxswde|logintop|">Name11
+</select>
+</div>
+ </ul>
+	</div>
+
+    </div><!--inner left ends-->
+
+   </div><!--innerbox1 ends-->
+
+<div id="innerbox"><!--innerbox2 starts-->
+ <div class="right"><!--inner right starts-->
+<div style="margin:50px 0px 0px 0px;">
+	
+
 <h3>Display Links</h3>
 
 <table>
   <tr>
     <th>Url</th>
-    <th>Description</th>
-    <th>Bookmark</th>
+    <th>Description</th>&nbsp; &nbsp;
+    <th>&nbsp; &nbsp; Bookmark</th>
     <th></th>
     <th></th>
     <th></th>
   </tr>
-   <% @book.links.each do |sub| %>
+   
+<% @book.links.each do |sub| %>
    <tr>
    <td><a href="<%= sub.url %>" target="_blank"><%= sub.url %> </a>  &nbsp; &nbsp;  </td>  
-   <td> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= sub.description %> &nbsp;</td>
-   <td><%= sub.bookmark.name %></td>
-  </tr>
- <% end %>
+   <td> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= sub.description %> </td> 
+   <td> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= sub.bookmark.name %> </td> 
+</tr>
+<% end %>
 
 </table>
 
+<%= link_to 'All Links', links_path %> &nbsp;&nbsp;&nbsp;&nbsp;
 <%= link_to 'Back', bookmarks_path %> &nbsp; &nbsp; &nbsp;
 <%= link_to 'New Link', new_link_path %>
+
+
+
+</form>
+</div>
+
+ </div><!--inner right ends-->
+</div><!--innerbox2 ends-->
+
+</div><!--body_content ends-->
+</div><!--middlebg ends-->
+
+<div id="footer"><!--footer starts-->
+  <span>Copyright &copy; 2012 Anibees</span>
+</div><!--footer ends-->
+
+</div><!--main_container ends-->
+</div> <!--home container ends-->
+
+</body>
+
+</html>
+
+
+
+
 

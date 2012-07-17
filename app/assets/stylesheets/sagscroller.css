@@ -1,0 +1,85 @@
+/*default CSS for SAG scroller*/
+
+.sagscroller{
+	width:260px;  /*default width of scroller*/
+	height:150px;
+	overflow:hidden;
+	position:relative;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:11px;
+	color:#333333;
+	z-index:0;
+	
+}
+
+
+.sagscroller ul{
+	position:absolute;
+	margin:0;
+	padding:0;
+	z-index:-100;
+	width: 100%;
+}
+
+
+.sagscroller ul li{
+	list-style-image: url(../Images/bullet2.png);
+	list-style-position:outside;
+	text-indent:1px;
+	padding:5px 3px 5px 0px;
+	margin-left:15px;
+}
+
+.sagscroller ul li .rsscontent{ /*div containing body of each RSS entry*/
+font-size:90%;
+}
+
+.sagscroller ul li .rsslabel{ /*div containing label of each RSS entry*/
+margin-top:5px;
+background: #eee;
+font-size:12px;
+clear: both;
+}
+
+
+
+
+/* #SAG scroller demo #2 */
+
+div#mysagscroller2{
+width: 1020px; /*width of scroller*/
+height:300px;
+border-top:1px solid #7d7d7d ;
+border-bottom:1px solid #7d7d7d ;
+border-left:1px solid #7d7d7d ;
+border-right:1px solid #7d7d7d ;
+overflow:auto;
+}
+
+div#mysagscroller2 ul li img{
+border-width:0;
+display:block; /*this causes each image to be flush against each other*/
+}
+
+
+
+
+
+.bullet {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	line-height: 16px;
+	font-weight: normal;
+	color: #333333;
+	list-style-image: url(images/bullet.jpg);
+	list-style-type: none;
+	border-bottom:#666666 1px dotted;
+	padding:2px 0 3px 0px;
+}
+
+
+.bg_news
+{
+	background-image:url(Images/bg_news.png);
+	background-repeat:repeat;
+}

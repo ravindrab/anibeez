@@ -1,7 +1,0 @@
-<h3>Bookmarks in <%= @book.link_url %></h3>
-
-
-<% @book.bookmarks.each do |sub| %>
-<a href="<%= sub.url %>" target="_blank"><%= sub.url %> </a> &nbsp;- <u><%= link_to 'Edit', edit_bookmark_path(:id => sub.id) %></u><br/>
-
-<% end %><br/>

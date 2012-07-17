@@ -5,4 +5,6 @@ class Link < ActiveRecord::Base
 
   validates :url, :format =>{ :with => /^((http|https):\/\/)?[a-z0-9]+([-.]{1}[a-z0-9]+).[a-z]{2,5}(:[0-9]{1,5})?(\/.)?$/ix, :message => " is not valid" }
   validates :url, :uniqueness => true
+attr_accessible :avatar
+  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }
 end

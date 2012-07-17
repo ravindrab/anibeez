@@ -1,23 +1,125 @@
-<h1>Welcome <%= @user.first_name %>&nbsp;<%= @user.last_name %></h1>
-<%= image_tag @user.avatar.url(:thumb) %><br/><br/>
 
-<%= link_to 'Update profile', edit_user_registration_path %><br/>
-<%= link_to 'Recent Activities', activities_path  %><br/>
-<%= link_to 'Bookmarks', bookmarks_path  %>
+<div class="container_12">
+ <div class="grid_12">
+ <!--======================== header ============================-->
+  <div class="header">
+  <!--======================== logo ============================-->
+   <img src="/assets/anibeeznew2.png" />
+   <ul class="secondary-menu">
+   <li><% if user_signed_in? %>
+   Signed in as <%= current_user.email %>. Not you?
+   <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+   <% else %>
+   <% end %></li>
+   </ul>
+  </div>
+ <!--======================== content ===========================-->
+
+  <span style="display:block;padding:10px 0 0 0"><%= image_tag @user.avatar.url(:medium) %></span>
+   <div class="grid_4 alpha">
+
+   <div class="indent-left4 indent-right5">
 
 
+<ul class="list-2">
 
-<h2>User search</h2>
+<li ><%= link_to 'Update profile', edit_user_registration_path %></li>
+<li><%= link_to 'Recent Activities', activities_path  %></li>
+<li><%= link_to 'Bookmarks', bookmarks_path  %></li>
+</ul>
+</div>
+
+</div>
+<!-- ========================user search==================== -->
+<div class="grid_8 omega">
+
 <%= form_for @search do |f| %>
     <%= f.label :first_name_contains, "Search by user name:" %><br/>
-    <%= f.text_field :first_name_contains, :size => "10" %><br/>
+    <%= f.text_field :first_name_contains, :size => "10" %>
     
-    <!-- etc... -->
+    
     <%= f.submit "search" %>
 <% end %>
-
-<% @users.each do |user| %> <%= image_tag user.avatar.url(:thumb) %>
+<div class="scroll">
+<% @users.each do |user| %> 
 <%= user.first_name %>&nbsp;<%= user.last_name %><br/>
 <% end %>
 
 
+</div>
+
+</div>
+<!-- ========================create query==================== -->
+
+<%= form_for(@activity) do |f| %>
+  <% if @activity.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@activity.errors.count, "error") %> prohibited this activity from being saved:</h2>
+
+      <ul>
+      <% @activity.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :query, "Create a Query" %><br />
+    <%= f.text_field :query %>
+  </div>
+ 
+  <div class="actions">
+    <%= f.submit "submit"%>
+  </div>
+<% end %>
+
+
+
+
+<div class="clear">
+</div>
+<!-- ========================recent queries==================== -->
+<div class="san">
+
+<div class="grid_10 alpha">
+
+<h2>Recent queries : </h2>
+
+
+	<span><div id="mysagscroller2" class="sagscroller"> <ul> 
+
+<% @activities.each do |activity| %>
+<li class="bullet">
+User:
+<%= activity.user.first_name  %>&nbsp;<%= activity.user.last_name  %><br/>
+<%= activity.query %>
+<%= link_to ' Comment', activity %>
+
+
+
+</li>
+<% end %>
+</ul></div></span>			 
+
+        
+
+
+</div>
+</div>
+</div>
+</div>
+<div class="clear">
+</div>
+
+<div class="wrapper box p7">
+<div style=" margin-top:10px;text-align:center;">
+&copy;&nbsp;<a href="http://anirasolutions.net" target="_blank">anirasolutions</a>
+</div>
+</div>
+
+<!--
+
+
+<h1></h1>
+-->

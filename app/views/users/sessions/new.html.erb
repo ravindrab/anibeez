@@ -1,4 +1,61 @@
-<h2>Welcome to anibeez</h2>
+
+<div class="container_12">
+<div class="grid_12">
+<!--======================== header ============================-->
+
+<div class="header">
+<!--======================== logo ============================-->
+<img src="/assets/anibeeznew2.png" />
+<!-- <span style="padding:0 0 0 50px;"><img src="/assets/anibeeznew2.png" /></span> -->
+<ul class="secondary-menu">
+<li><% if user_signed_in? %>
+    Signed in as <%= current_user.email %>. Not you?
+    <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+  <% else %>
+   Welcome to Anibeez &nbsp;Please sign in to get access your account
+  <% end %></li>
+</ul>
+</div>
+</div>
+<!--======================== content ===========================-->
+
+
+<div class="grid_10 alpha">
+<div class="indents">
+<h3 class="p3-1">About Us</h3>
+<p class="p4">
+
+<span>
+    Incepted in the year 2003 Anira solutions Inc, is a leading software application development and consulting company serving the ever growing demand for IT project execution and staffing needs of our clients.
+<br />
+
+Anira provides core services in IT Staffing and Consulting, Finance and Professional Services, ERP Services, and Infrastructure Support Services. Our vision is to be a global business partner, delivering highest quality and most consistent services at the best value to clients worldwide.
+
+<br />
+Incorporated in 2003 as a certified Minority Business Enterprise, Anira has posted an  average of 30% growth per year. ANIRA is headquartered in Reston, Virginia, with offices and delivery locations worldwide in North  America and the Asia Pacific region.
+
+<br />
+For companies seeking strategic value in long-term relationships, ANIRA provides a flexible and responsive alternative to the traditional IT staffing firms that cannot deliver the specialized capabilities required for today’s complex IT issues and the larger consultancies that are simply too expensive for many engagements.
+
+<br />
+ANIRA draws on both the unmatched experience of its highly talented IT professionals and its results-oriented, customer-focused approach to service. Our teams quickly, creatively, and cost-effectively solve complex problems in mission-critical systems — and tenaciously deliver all-out effort until the job is done. Across the full spectrum of IT requirements, including implementations and roll-outs, support and maintenance, upgrades, business intelligence, and customer relationship management, ANIRA offers capabilities of equal and greater quality to those of the best-known IT firms, but at considerably lower costs, often at a savings of up to 40%.
+
+<br />
+The ability to partner with customers in whatever relationship best meets their needs makes ANIRA an exceptional value for companies in fields such as transportation, finance, oil and gas, healthcare and pharmaceuticals, green technologies, and other industries that depend on the quality and performance of enterprise-scale business services and systems.
+    </span>
+<br /><br />
+<a href="http://anirasolutions.net" target="_blank" class="button">Read More</a>
+</div>
+</div>
+<div class="grid_4">
+<div class="indents">
+<h3 class="p3-1"><br/></h3> 
+
+
+
+	<h2><center>Sign in to your Anibeez account </center></h2><br/><br/>
+
+<div class="form-right"> 
 
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
   <div><%= f.label :email %><br />
@@ -13,5 +70,30 @@
 
   <div><%= f.submit "Sign in" %></div>
 <% end %>
-
+<br/>
 <%= render :partial => "devise/shared/links" %>
+
+
+</div>
+
+	
+</p>
+
+</div>
+</div>
+</div>
+<div class="wrapper">
+<div class="grid_8 alpha">
+</div>
+</div>
+
+
+</div>
+<div class="clear">
+</div>
+<div class="wrapper box p7">
+<div style=" margin-top:10px;text-align:center;">
+&copy;&nbsp;<a href="http://anirasolutions.net" target="_blank">anirasolutions</a>
+</div>
+</div>
+
